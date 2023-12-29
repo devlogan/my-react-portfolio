@@ -1,32 +1,34 @@
-import logo from "./logo.svg";
 import "./App.css";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import HomePage from "./containers/homepage";
+import GithubProjects from "./containers/github_projects";
+import Navbar from "./components/navbar";
+import LiveProjects from "./containers/live_projects";
+import "./App.scss";
 import { useState } from "react";
-const colours = ["#323232", "#17139c", "#452b45", "#89c4ff", "#6db193"];
-function App() {
-  const [colour, setColour] = useState(0);
+import Slider from "./components/slider";
 
-  const colourChange = () => {
-    setColour((colour) => {
-      console.log(colour);
-      console.log(colour === colours.length - 1);
-      if (colour === colours.length - 1) {
-        return 0;
-      } else {
-        return colour + 1;
-      }
-    });
+function App() {
+  const [theme, setTheme] = useState("light"); // Default theme
+
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
   };
+
   return (
-    <div className="App">
-      <div
-        className="content"
-        style={{ background: colours[colour] }}
-        onClick={colourChange}
-      >
-        <h1>Divyanshu Srivastava</h1>
-        <h2>Senior Software Engineer</h2>
-        <h3>Paytm Payments Bank</h3>
-      </div>
+    <div className={`App ${theme}-theme`}>
+      {/* <button onClick={toggleTheme}>Toggle Theme</button> */}
+      <Router>
+        <Navbar toggleTheme={toggleTheme} />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/github-projects" element={<GithubProjects />} />
+          <Route path="/live-projects" element={<LiveProjects />} />
+        </Routes>
+        {/* < Route path="/projects">
+          <AboutPage />
+        </Route> */}
+      </Router>
     </div>
   );
 }

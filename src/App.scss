@@ -1,0 +1,24 @@
+@import "./themes/light-theme.scss";
+@import "./themes/dark-theme.scss";
+
+.light-theme {
+  // Use CSS variables
+  background-color: var(--background-color);
+  color: var(--text-color);
+
+  a {
+    color: var(--link-color);
+  }
+  // Other light theme styles
+}
+
+.dark-theme {
+  // Use CSS variables
+  background-color: var(--background-color-dark);
+  color: var(--text-color-dark);
+
+  a {
+    color: var(--link-color-dark);
+  }
+  // Other dark theme styles
+}
