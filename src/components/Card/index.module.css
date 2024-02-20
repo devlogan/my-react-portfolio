@@ -1,6 +1,6 @@
 .card {
   background-color: var(--color-white);
-  padding: 1.5rem;
+  padding: 1.2rem;
   border: 2px solid transparent;
   border-radius: var(--border-radius-1);
   transition: var(--transition);

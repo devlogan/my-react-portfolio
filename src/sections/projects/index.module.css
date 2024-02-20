@@ -34,3 +34,19 @@
   color: var(--color-primary);
   border-color: var(--color-primary);
 }
+
+/* media query for mid sized screens */
+@media screen and (max-width: 1024px) {
+  .portfolio__projects {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+/* media query for small sized screens */
+@media screen and (max-width: 600px) {
+  .portfolio__projects {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
