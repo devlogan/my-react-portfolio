@@ -26,7 +26,7 @@ const navLinks = [
   },
 ];
 
-const Navbar = () => {
+const Navbar = ({ showModalHandler }) => {
   return (
     <nav className="">
       <div className={`container ${style.nav__container}`}>
@@ -40,7 +40,7 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        <span>
+        <span onClick={showModalHandler}>
           <img src={colorPallete} className={style.nav__color_palette}></img>
         </span>
       </div>
