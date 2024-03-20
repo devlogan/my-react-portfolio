@@ -13,16 +13,18 @@ function App() {
   const { showModal, showModalHandler, closeModalHandler } = useModalContext();
   const { themeState } = useThemeContext();
   return (
-    <main className={`${themeState.primary} ${themeState.background}`}>
-      <Navbar showModalHandler={showModalHandler} />
-      <Header />
-      <About />
-      <Contact />
-      <Projects />
-      <Contact />
-      <Footer />
+    <>
+      <main className={`${themeState.primary} ${themeState.background}`}>
+        <Navbar showModalHandler={showModalHandler} />
+        <Header />
+        <About />
+        <Contact />
+        <Projects />
+        <Contact />
+        <Footer />
+      </main>
       <Theme />
-    </main>
+    </>
   );
 }
 
